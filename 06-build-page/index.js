@@ -122,7 +122,7 @@ async function buildHTML(pathTemplate, pathComponents, pathHTMLTo) {
   for (let [key, value] of componentsMap) {
     const templateTag = `{{${key}}}`;
     while (HTMLBody.includes(templateTag)) {
-      HTMLBody = HTMLBody.replace(templateTag, '\n' + value);
+      HTMLBody = HTMLBody.replace(templateTag, value);
     }
   }
 
