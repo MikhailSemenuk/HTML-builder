@@ -3,7 +3,7 @@ const path = require('path');
 const pathSourceCSS = path.join(__dirname, 'styles');
 const pathBundleCSS = path.join(__dirname, 'project-dist', 'bundle.css');
 
-async function readDirectory(directoryPath) {
+async function mergeCSS(directoryPath) {
   const bundleArray = [];
   try {
     const filesFolders = await fs.readdir(directoryPath, {
@@ -31,4 +31,4 @@ async function readDirectory(directoryPath) {
   }
 }
 
-readDirectory(pathSourceCSS);
+mergeCSS(pathSourceCSS);
