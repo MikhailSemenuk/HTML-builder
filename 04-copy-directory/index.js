@@ -28,10 +28,10 @@ async function copyFiles() {
     if (file.isDirectory()) {
       continue;
     }
-    const FileIn = join(__dirname, BASIC_FOLDER, file.name);
-    const FileOut = join(__dirname, COPY_FOLDER, file.name);
+    const FileFrom = join(__dirname, BASIC_FOLDER, file.name);
+    const FileTo = join(__dirname, COPY_FOLDER, file.name);
 
-    await copyFile(FileIn, FileOut);
+    await copyFile(FileFrom, FileTo);
   }
 }
 
