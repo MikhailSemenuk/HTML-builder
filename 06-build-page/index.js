@@ -113,6 +113,11 @@ async function buildHTML(pathTemplate, pathComponents, pathHTMLTo) {
 
     const filePath = join(pathComponents, file.name);
     const fileInfo = parse(filePath);
+
+    if (fileInfo.ext !== '.html') {
+      continue;
+    }
+
     const fileContent = await readFile(filePath, 'utf8');
     componentsMap.set(fileInfo.name, fileContent);
   }
